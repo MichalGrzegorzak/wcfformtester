@@ -1,0 +1,21 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:c="clr-namespace:CODE.Framework.Wpf.Controls;assembly=CODE.Framework.Wpf">
+
+    <Style TargetType="ListBox" x:Key="CustomerList">
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="{Binding FirstName}" Width="200" />
+                        <Rectangle Width="1" Stroke="Silver" />
+                        <Label Content="{Binding LastName}" Width="200" />
+                        <Rectangle Width="1" Stroke="Silver" />
+                        <Label Content="{Binding Company}" Width="200" />
+                    </StackPanel>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="c:ListBoxEx.CommandTrigger" Value="DoubleClick" />
+    </Style>
+</ResourceDictionary>

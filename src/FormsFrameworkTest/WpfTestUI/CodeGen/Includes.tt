@@ -1,0 +1,3 @@
+﻿<#@ template language="C#" #>
+<# // the following template outputs code that is added to the start of every generated file #>
+using System.ComponentModel;
