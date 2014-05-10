@@ -8,30 +8,35 @@ using Snippets;
 
 namespace WpfTestUI.Models.Customers
 {
-    //[SnippetINotifyPropertyChanged]
     [SnippetPropertyINPC(field = "_firstName", property = "FirstName")]
+    [SnippetPropertyINPC(field = "_borderColor", property = "BorderColor")]
     public partial class EditViewModel : ViewModel
     {
         private CustomerRepo _repo;
-        public bool IsChanged { get; set; }
+        public bool IsLoaded { get; set; }
         public string Title { get; set; }
-        public string BorderColor { get; set; }
 
         public EditViewModel()
         {
             Actions.Add(new ViewAction("Save", execute: (a, o) => Save(), category: "Customer"));
             Actions.Add(new CloseCurrentViewAction(this, beginGroup: true, category: "Customer"));
-
+            
             _repo = new CustomerRepo();
             BorderColor = Colors.Green.ToString();
+            Title = "HIHI";
 
-            this.PropertyChanged += (sender, args) => 
-            { 
-                IsChanged = true;
+            AttachingEvents();
+        }
+
+        private void AttachingEvents()
+        {
+            this.Opened += (sender, args) => IsLoaded = true;
+
+            this.PropertyChanged += (sender, args) =>
+            {
+                if (!IsLoaded) return;
                 BorderColor = Colors.Red.ToString();
             };
-
-            Title = "HIHI";
         }
 
         public void LoadData(int id)

@@ -27,6 +27,28 @@ namespace WpfTestUI.Models.Customers
     /// Invoked when the value of FirstName changes
     /// </summary>
     partial void OnFirstNameChanged(string value);
+
+
+    private string _borderColor = null;
+    public static readonly string BorderColorProperty = "BorderColor";
+    public string BorderColor
+    {
+	    get { return _borderColor; }
+	    set
+	    {
+			if (_borderColor == value)
+				return;
+			_borderColor = value;
+        
+			OnBorderColorChanged(value);
+			NotifyChanged(BorderColorProperty);
+	    }
+    }
+    
+    /// <summary>
+    /// Invoked when the value of BorderColor changes
+    /// </summary>
+    partial void OnBorderColorChanged(string value);
   }
 }
 	

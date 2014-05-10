@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfTestUI", "WpfTestUI\WpfTestUI.csproj", "{25F13FCA-83B6-4185-B95F-2CA74273E552}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI_CodeFrame", "FormsFrameworkTest\UI_CodeFrame\UI_CodeFrame.csproj", "{25F13FCA-83B6-4185-B95F-2CA74273E552}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_ExternalComponents", "_ExternalComponents\_ExternalComponents.csproj", "{F8BF70C1-E373-4BE8-AD0B-FC8ACED6E937}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_ExternalComponents", "FormsFrameworkTest\_ExternalComponents\_ExternalComponents.csproj", "{F8BF70C1-E373-4BE8-AD0B-FC8ACED6E937}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{19341549-E119-4AD5-AEF7-38B89A1A03AA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "FormsFrameworkTest\Core\Core.csproj", "{19341549-E119-4AD5-AEF7-38B89A1A03AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

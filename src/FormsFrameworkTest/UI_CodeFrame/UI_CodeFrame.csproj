@@ -146,6 +146,7 @@
       <DependentUpon>GenerateObjects.tt</DependentUpon>
     </Compile>
     <Compile Include="CodeGen\Includes.cs" />
+    <Compile Include="CodeGen\Snippets\dp.cs" />
     <Compile Include="CodeGen\Snippets\inpc.cs" />
     <Compile Include="CodeGen\Snippets\prop_inpc.cs" />
     <Compile Include="CodeGen\Util1.cs">
@@ -192,6 +193,7 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Includes1.cs</LastGenOutput>
     </None>
+    <None Include="CodeGen\Snippets\dp.snippet" />
     <None Include="CodeGen\Snippets\inpc.snippet" />
     <None Include="CodeGen\Snippets\prop_inpc.snippet" />
     <None Include="CodeGen\Util.tt">
