@@ -2,9 +2,9 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:mvvm="clr-namespace:CODE.Framework.Wpf.Mvvm;assembly=CODE.Framework.Wpf.Mvvm">
     
-	<ResourceDictionary.MergedDictionaries>
+	<!--<ResourceDictionary.MergedDictionaries>
 		<ResourceDictionary Source="List.Metro.xaml"/>
-	</ResourceDictionary.MergedDictionaries>
+	</ResourceDictionary.MergedDictionaries>-->
 
     <Style TargetType="ListBox" x:Key="CustomerList2" BasedOn="{StaticResource CustomerList}">
         <Setter Property="Margin" Value="0" />

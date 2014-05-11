@@ -562,6 +562,11 @@
             The instance has been disposed of.
             </exception>
         </member>
+        <member name="F:CODE.Framework.Core.Utilities.Csv.CsvReader._allocStack">
+            <summary>
+            Contains the stack when the object was allocated.
+            </summary>
+        </member>
         <member name="F:CODE.Framework.Core.Utilities.Csv.CsvReader._isDisposed">
             <summary>
             Contains the disposed status flag.

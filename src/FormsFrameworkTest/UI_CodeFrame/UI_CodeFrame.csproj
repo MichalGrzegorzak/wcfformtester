@@ -110,6 +110,9 @@
     <Reference Include="CODE.Framework.Wpf.Theme.Workplace">
       <HintPath>..\_ExternalComponents\CODEFramework\CODE.Framework.Wpf.Theme.Workplace.dll</HintPath>
     </Reference>
+    <Reference Include="FluentValidation">
+      <HintPath>..\..\packages\FluentValidation.5.1.0.0\lib\Net40\FluentValidation.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -285,8 +288,8 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Customer\Edit.Default.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Customer\Edit.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -296,19 +299,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\Customer\List.Metro.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Views\Customer\List.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Customer\Search.Default.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\Customer\Search.Metro.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

@@ -34,18 +34,34 @@
     <Reference Include="FizzWare.NBuilder">
       <HintPath>..\packages\NBuilder.3.0.1.1\lib\FizzWare.NBuilder.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationClient" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="DAL\CustomerRepo.cs" />
     <Compile Include="Entity\Customer.cs" />
+    <Compile Include="Magellan\DispatchedObservableCollection.cs" />
+    <Compile Include="Magellan\DispatcherWrapper.cs" />
+    <Compile Include="Magellan\IDispatcher.cs" />
+    <Compile Include="Magellan\TraceExtensions.cs" />
+    <Compile Include="Magellan\TraceSources.cs" />
+    <Compile Include="Magellan\ValidationMessageCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Magellan\ValidationMessageDictionary.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Mediator\Mediator.cs" />
     <Compile Include="Mediator\MultiDictionary.cs" />
     <Compile Include="Mediator\ViewModelMessages.cs" />
@@ -53,6 +69,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Validation\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
