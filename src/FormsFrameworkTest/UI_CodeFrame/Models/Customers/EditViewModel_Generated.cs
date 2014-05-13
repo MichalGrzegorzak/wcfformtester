@@ -1,5 +1,6 @@
 
 using System.ComponentModel;
+using CODE.Framework.Wpf.Mvvm;
 
 namespace WpfTestUI.Models.Customers
 {
@@ -49,6 +50,50 @@ namespace WpfTestUI.Models.Customers
     /// Invoked when the value of BorderColor changes
     /// </summary>
     partial void OnBorderColorChanged(string value);
+
+
+    private bool _isValid = false;
+    public static readonly string IsValidProperty = "IsValid";
+    public bool IsValid
+    {
+	    get { return _isValid; }
+	    set
+	    {
+			if (_isValid == value)
+				return;
+			_isValid = value;
+        
+			OnIsValidChanged(value);
+			NotifyChanged(IsValidProperty);
+	    }
+    }
+    
+    /// <summary>
+    /// Invoked when the value of IsValid changes
+    /// </summary>
+    partial void OnIsValidChanged(bool value);
+
+
+    private ViewAction _actionSave = null;
+    public static readonly string ActionSaveProperty = "ActionSave";
+    public ViewAction ActionSave
+    {
+	    get { return _actionSave; }
+	    set
+	    {
+			if (_actionSave == value)
+				return;
+			_actionSave = value;
+        
+			OnActionSaveChanged(value);
+			NotifyChanged(ActionSaveProperty);
+	    }
+    }
+    
+    /// <summary>
+    /// Invoked when the value of ActionSave changes
+    /// </summary>
+    partial void OnActionSaveChanged(ViewAction value);
   }
 }
 	

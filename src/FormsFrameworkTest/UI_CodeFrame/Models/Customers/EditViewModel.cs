@@ -1,6 +1,10 @@
 using System;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
 using System.Windows.Media;
 using AutoMapper;
 using CODE.Framework.Wpf.Mvvm;
@@ -24,15 +28,36 @@ namespace WpfTestUI.Models.Customers
 
     [SnippetPropertyINPC(field = "_firstName", property = "FirstName")]
     [SnippetPropertyINPC(field = "_borderColor", property = "BorderColor")]
+    [SnippetPropertyINPC(field = "_isValid", property = "IsValid", type = "bool", defaultValue = "false")]
+    [SnippetPropertyINPC(field = "_actionSave", property = "ActionSave", type = "ViewAction")]
     public partial class EditViewModel : ViewModel, IDataErrorInfo, IStoreValidationMessages
     {
         private CustomerRepo _repo;
         public bool IsLoaded { get; set; }
         public string Title { get; set; }
 
+        partial void OnIsValidChanged(bool value)
+        {
+            ActionSave.BrushResourceKey = value ? "CODE.Framework-Icon-SaveLocal" : "CODE.Framework-Icon-Stop";
+            ActionSave.InvalidateCanExecute();
+            ActionChangeNotificationActive = true;
+            InvalidateAllActions();
+
+            var x = ActionSave.Availability;
+            //NotifyChanged("ActionSave");
+            //NotifyChanged("Actions");
+            ActionSave.Brush = Application.Current.FindResource("CODE.Framework-Icon-ZoomIn") as Brush;
+            
+        }
+
         public EditViewModel()
         {
-            Actions.Add(new ViewAction("Save", execute: (a, o) => Save(), category: "Customer"));
+            ActionSave = new ViewAction("Save", category: "Customer",
+                                        execute: (a, o) => Save(),
+                                        canExecute: (action, o) => IsValid, 
+                                        brushResourceKey: "CODE.Framework-Icon-SaveLocal");
+            Actions.Add(ActionSave);
+
             Actions.Add(new CloseCurrentViewAction(this, beginGroup: true, category: "Customer"));
             //Actions.Add(new ViewAction("Save", execute: (a, o) => Save()));
             //Actions.Add(new CloseCurrentViewAction(this, beginGroup: true));
@@ -40,6 +65,7 @@ namespace WpfTestUI.Models.Customers
             _repo = new CustomerRepo();
             BorderColor = Colors.Green.ToString();
             Title = "HIHI";
+            IsValid = true;
 
             AttachingEvents();
         }
@@ -165,6 +191,12 @@ namespace WpfTestUI.Models.Customers
                 }
             }
 
+            IsValid = result.IsValid;
+            if (!result.IsValid)
+            {
+                //Controller.Message("Model is not valid"); 
+            }
+                
             //if (!result.IsValid)
             //{
             //    var flasher = model as IFlasher;
